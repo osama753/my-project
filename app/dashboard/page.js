@@ -3,17 +3,17 @@
 import { useEffect, useState } from "react";
 
     async function logout(){
-        await fetch("/app/logout",{
+        await fetch("/api/logout",{
             method: "POST",
         });
 
         window.location.href = "/login";
     }
     export default function Dashboard(){
-        const [products, setProducts] = useState([]);
+        const [products, setProducts] = useState( [] );
 
-        useEffect(()=> {
-                fetchProducts();
+        useEffect(() => {
+             fetchProducts();
             }, []);
 
             async function fetchProducts(){
